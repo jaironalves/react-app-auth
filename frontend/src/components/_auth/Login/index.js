@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 
-import Logo from '../../assets/logo.png'
+import Logo from '../../../assets/logo.png'
 
-import  './style.sass'
+import { Form, Container } from './styles'
 
 export default class Login extends Component {
 
-    constructor() {
-        super()
-        this.handleChange = this.handleChange.bind(this)
-    }
-
-    handleChange(e){
+    handleChange = e => {
         this.setState(
             {
                 [e.target.name]: e.target.value
@@ -20,32 +15,33 @@ export default class Login extends Component {
         )
     }
 
+    handleLogin = e => {
+        e.preventDefault();
+        alert("Eu vou logar");
+    }
+
     render() {
         return (
-            <div className="auth-container">
-                <div className="auth-card">                    
-                    <form>
-                        <img className="auth-logo" src={Logo} alt="React logo" />
-                        <input
-                            className="auth-input"
-                            name="usuarionome"
-                            placeholder="Nome de usuário"
-                            type="text"
-                            onChange={this.handleChange}
-                        />
-                        <input
-                            className="auth-input"
-                            name="usuariosenha"
-                            placeholder="Senha"
-                            type="password"
-                            onChange={this.handleChange}
-                        />                        
-                        <input className="auth-fazer" type="submit" value = "Fazer login" />
-                        <hr className="auth-separacao" />                        
-                        <Link className="auth-link" to="/cadastrar">Ainda não é membro?</Link>
-                    </form>
-                </div>
-            </div>
+            <Container>
+                <Form onSubmit={this.handleLogin}>
+                    <img src={Logo} alt="React logo" />
+                    <input                        
+                        type="text"
+                        name="usuarionome"
+                        placeholder="Nome de usuário"                        
+                        onChange={this.handleChange}
+                    />
+                    <input
+                        type="password"
+                        name="usuariosenha"
+                        placeholder="Senha"                        
+                        onChange={this.handleChange}
+                    />
+                    <button type="submit">Fazer login</button>
+                    <hr />
+                    <Link to="/cadastrar">Ainda não é membro?</Link>
+                </Form>
+            </Container>
         )
     }
 }
