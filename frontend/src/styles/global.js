@@ -8,18 +8,31 @@ const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
   body, html {
+    color: green;
     background: #eee;
     font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     height: 100%;
     width: 100%;
+    button {
+      color: green;
+    }
   }
 `
 
-const GlobalStyleContainer = styled.div``
+const GlobalStyleContainer = styled.main`
+  display: block;
+  min-height: 100%;
+`
 
-export {
+const GlobalTheme = {
+  main: "mediumseagreen",
+  mainHover: "purple"
+};
+
+export {  
   GlobalStyleContainer,
-  GlobalStyle
+  GlobalStyle,
+  GlobalTheme
 }

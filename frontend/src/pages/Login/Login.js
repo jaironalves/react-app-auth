@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 
-import Logo from '../../../assets/logo.png'
+import Logo from '../../assets/logo.png'
+
 
 import { Form, Container } from './styles'
+import StyledA from '../../components/StyledA'
+import StyledButton from '../../components/StyledButton'
 
 export default class Login extends Component {
 
@@ -23,22 +26,24 @@ export default class Login extends Component {
     render() {
         return (
             <Container>
+                <StyledButton>Ola mundo</StyledButton>
                 <Form onSubmit={this.handleLogin}>
                     <img src={Logo} alt="React logo" />
-                    <input                        
+                    <input
                         type="text"
                         name="usuarionome"
-                        placeholder="Nome de usuário"                        
+                        placeholder="Nome de usuário"
                         onChange={this.handleChange}
                     />
                     <input
                         type="password"
                         name="usuariosenha"
-                        placeholder="Senha"                        
+                        placeholder="Senha"
                         onChange={this.handleChange}
                     />
                     <button type="submit">Fazer login</button>
                     <hr />
+                    <StyledA href="www.google.br">GO</StyledA>
                     <Link to="/cadastrar">Ainda não é membro?</Link>
                 </Form>
             </Container>
