@@ -38,13 +38,9 @@ export const Form = styled.form`
       color: #999;
     }
   }
-  button {
-    color: #FFF;
-    font-size: 16px;
-    background: #fc6963;
-    height: 56px;
-    border: 0;
-    border-radius: 5px;
+  button {        
+    height: 46px;
+    border: 0;    
     width: 100%;
   }
   hr {

@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
+
+
 const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
@@ -8,27 +10,20 @@ const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
   body, html {
-    color: green;
+    @import url('https://fonts.googleapis.com/css?family=Roboto');    
     background: #eee;
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+    font-family: Roboto, sans-serif;    
     height: 100%;
-    width: 100%;
-    button {
-      color: green;
-    }
+    width: 100%;    
   }
 `
-
-const GlobalStyleContainer = styled.main`
-  display: block;
-  min-height: 100%;
-`
-
 const GlobalTheme = {
-  main: "mediumseagreen",
-  mainHover: "purple"
+  primary: '#ff0198',
+  secondary: '#01c1d6',
+  //danger: '#eb238e',
+  danger: 'green',
+  light: '#f4f4f4',
+  dark: '#222'
 };
 
 export {  

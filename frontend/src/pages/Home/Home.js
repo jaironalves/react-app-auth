@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
+import StyledButton from '../../components/StyledButton'
+import Navigation from '../../components/Navigation'
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <Navigation />          
         <h2>Seja bem vindo</h2>
-      </div>
+        <StyledButton>Ola mundo</StyledButton>
+        <StyledButton primary>Primary</StyledButton>
+        <StyledButton danger>Danger</StyledButton>
+      </React.Fragment>
     )
   }
 }

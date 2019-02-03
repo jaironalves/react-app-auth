@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 import Logo from '../../assets/logo.png'
 
-
 import { Form, Container } from './styles'
+
 import StyledA from '../../components/StyledA'
 import StyledButton from '../../components/StyledButton'
 
@@ -25,8 +25,7 @@ export default class Login extends Component {
 
     render() {
         return (
-            <Container>
-                <StyledButton>Ola mundo</StyledButton>
+            <Container>                
                 <Form onSubmit={this.handleLogin}>
                     <img src={Logo} alt="React logo" />
                     <input
@@ -41,7 +40,7 @@ export default class Login extends Component {
                         placeholder="Senha"
                         onChange={this.handleChange}
                     />
-                    <button type="submit">Fazer login</button>
+                    <StyledButton primary type="submit">Fazer login</StyledButton>
                     <hr />
                     <StyledA href="www.google.br">GO</StyledA>
                     <Link to="/cadastrar">Ainda não é membro?</Link>

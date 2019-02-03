@@ -10,11 +10,11 @@ import Home from './pages/Home'
 
 import PrivateRoute from './components/PrivateRoute'
 
-import { GlobalStyleContainer, GlobalStyle, GlobalTheme } from './styles/global'
+import { GlobalStyle, GlobalTheme } from './styles/global'
 
 const Routes = () => (
     <ThemeProvider theme={GlobalTheme}>
-        <GlobalStyleContainer>
+        <React.Fragment>
             <GlobalStyle />
             <BrowserRouter>
                 <Switch>
@@ -25,7 +25,7 @@ const Routes = () => (
                     <Route path="*" component={() => <h1>Page not found</h1>} />
                 </Switch>
             </BrowserRouter>
-        </GlobalStyleContainer>
+        </React.Fragment>
     </ThemeProvider>
 
 )

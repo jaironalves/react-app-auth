@@ -1,19 +1,33 @@
 import styled, { css } from 'styled-components'
 
-//color: ${props => props.theme.main};
+const cssDefault = css`
+  background: transparent;
+  color: ${props => props.theme.primary};
+`
 
-const StyledButton = styled.button`
-    ${props => props.color && css`
-      color: ${props => props.color};      
-    `};
-    font-size: 16px;
-    ${props => props.background && css`
-      background-color: ${props => props.background};      
-    `};    
-    height: 56px;
-    border: 0;
+const cssPrimary = css`
+  background: ${props => props.theme.primary};
+  color: white; 
+`
+
+const cssDanger = css`
+background: red;
+color: white;
+border: 2px solid red;    
+`
+
+const StyledButton = styled.button`    
+    font-size: 1em;
     border-radius: 5px;
-    width: 100%;   
+    padding: 0.25em 1em;
+    margin: 0 1em;    
+    border: 2px solid ${props => props.theme.primary};    
+    
+    ${props => 
+      (props.primary && cssPrimary) ||
+      (props.danger && cssDanger) ||
+      cssDefault
+      }     
 `
 
 export default StyledButton
