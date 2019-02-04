@@ -1,61 +1,91 @@
-import styled from 'styled-components'
 import React, { Component } from 'react'
+import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
+import { AccountCircle, Menu } from 'styled-icons/material'
 
 const NavBarContainer = styled.nav`        
     display: flex;
     align-items: center;
-    height: 40px;        
+    height: 40px;     
     background-color: ${props => props.theme.primary};    
+    padding: 0 10px;    
 `
-const NavBarHeaderLogo = styled.img`
+
+const NavBarBrandContainer = styled(Link)`
+    display: flex;
     height: 100%;
+    text-decoration: none;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    &:active {
+        text-decoration: none;
+    }
+    &:visited {
+        text-decoration: none;
+    }
+
+`
+
+const NavBarHeaderLogo = styled.img`
+    height: 100%;    
 `
 
 const NavBarHeaderText = styled.div`
-    
+    width: 120px;  
+    margin-right: 10px; 
 `
 
-const NavBarToggleButtonContainer = styled.div`    
-    height: 100%;
-    width: 30px;     
-    margin: 10px;
-    margin-left: auto;    
-    button {     
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 100%;
-        width: 100%;        
-        background: transparent;
-        border: none;
-        cursor: pointer; 
-        padding: 0;  
-        box-sizing: border-box;       
-        div {                                     
-            width: 30px;
-            height: 2px;
-            background: white;            
-        }
+const NavBarHeaderLink = styled(Link)`    
+    width: 100px; 
+    text-decoration: none;    
+    text-align: center;        
+    color: white;   
+    font-weight: bold; 
+`
+
+const NavBarHeaderLinkContainer = styled.div`    
+    border: 2px solid black;
+    display: flex;    
+    height: 100%;            
+    box-sizing: border-box;
+    align-items: center;       
+    ${props => (props.right && css`margin-left: auto;`)}
+    ${props => (props.desktop && css`
+        @media (max-width: 725px) {
+            display: none;            
+        }        
+        `)
     }
-    @media (min-width: 699px) {
+`
+
+const NavBarHeaderToggleButton = styled(Menu)`
+    background-color: transparent;
+    color: white; 
+    height: 100%;
+    width: 40px;  
+    cursor: pointer;
+    @media (min-width: 726px) {
         display: none;            
     }
 `
 
-const NavBarHeaderToggleButton = props => (
-    <NavBarToggleButtonContainer>
-        <button>
-            <div />
-            <div />
-            <div />
-        </button>
-    </NavBarToggleButtonContainer>
-)
+const NavBarAccountCircle = styled(AccountCircle)`
+    background-color: transparent;
+    color: white; 
+    height: 100%;
+    width: 40px;  
+    cursor: pointer;     
+`
 
 export {
     NavBarContainer,
     NavBarHeaderLogo,
     NavBarHeaderText,
-    NavBarHeaderToggleButton
+    NavBarHeaderLinkContainer,    
+    NavBarHeaderLink,
+    NavBarHeaderToggleButton,
+    NavBarButtorRounded,
+    NavBarAccountCircle,
+    NavBarBrandContainer
 }

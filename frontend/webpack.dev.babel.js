@@ -11,7 +11,7 @@ const optionsCommon = ({
 export default Merge(Common(optionsCommon), {
     devtool: 'inline-source-map',
     devServer: {
-        host: 'localhost',
+        host: '0.0.0.0',
         port: process.env.PORT || 3000,
         hot: true,
         historyApiFallback: true

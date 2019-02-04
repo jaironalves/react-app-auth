@@ -27,7 +27,6 @@ const Routes = () => (
             </BrowserRouter>
         </React.Fragment>
     </ThemeProvider>
-
 )
 
 export default Routes
