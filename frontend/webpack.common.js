@@ -14,7 +14,7 @@ export default (options) => {
                     ],
                 },
                 {
-                    test: /\.s(a|c)ss$/,
+                    test: /\.(sa|sc|c)ss$/,
                     use: [
                         options.cssStyleLoader,
                         'css-loader',

@@ -5,49 +5,37 @@ import { AccountCircle, Menu } from 'styled-icons/material'
 
 const NavBarContainer = styled.nav`        
     display: flex;
-    align-items: center;
-    height: 40px;     
+    align-items: center;    
+    height: 56px;     
     background-color: ${props => props.theme.primary};    
-    padding: 0 10px;    
-`
-
-const NavBarBrandContainer = styled(Link)`
-    display: flex;
-    height: 100%;
-    text-decoration: none;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    &:active {
-        text-decoration: none;
+    padding: 0 10px;  
+    border: 1px solid black;    
+    @media (max-width: 725px) {
+        padding: 0;        
+        justify-content: space-between;        
     }
-    &:visited {
-        text-decoration: none;
-    }
-
-`
-
-const NavBarHeaderLogo = styled.img`
-    height: 100%;    
-`
-
-const NavBarHeaderText = styled.div`
-    width: 120px;  
-    margin-right: 10px; 
 `
 
 const NavBarHeaderLink = styled(Link)`    
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100px; 
     text-decoration: none;    
     text-align: center;        
     color: white;   
     font-weight: bold; 
+    border: 2px solid yellow;
+    &:hover{
+        color: gray;
+    }     
 `
 
 const NavBarHeaderLinkContainer = styled.div`    
     border: 2px solid black;
     display: flex;    
-    height: 100%;            
+    height: 80%;            
     box-sizing: border-box;
     align-items: center;       
     ${props => (props.right && css`margin-left: auto;`)}
@@ -60,11 +48,15 @@ const NavBarHeaderLinkContainer = styled.div`
 `
 
 const NavBarHeaderToggleButton = styled(Menu)`
+    flex: 1;
+    border: 2px solid purple;
     background-color: transparent;
     color: white; 
     height: 100%;
-    width: 40px;  
-    cursor: pointer;
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    cursor: pointer;       
     @media (min-width: 726px) {
         display: none;            
     }
@@ -75,7 +67,10 @@ const NavBarAccountCircle = styled(AccountCircle)`
     color: white; 
     height: 100%;
     width: 40px;  
-    cursor: pointer;     
+    cursor: pointer;  
+    @media (min-width: 726px) {
+        display: none;            
+    }   
 `
 
 export {
@@ -87,5 +82,6 @@ export {
     NavBarHeaderToggleButton,
     NavBarButtorRounded,
     NavBarAccountCircle,
-    NavBarBrandContainer
+    NavBarBrandContainer,
+    NavBarSpace
 }
