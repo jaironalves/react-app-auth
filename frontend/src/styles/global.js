@@ -1,6 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
-
-
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -26,8 +24,7 @@ const GlobalTheme = {
   dark: '#222'
 };
 
-export {  
-  GlobalStyleContainer,
+export {    
   GlobalStyle,
   GlobalTheme
 }

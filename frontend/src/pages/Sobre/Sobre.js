@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default Sobre = () => {
+const Sobre = () => {
   <div>
      Somos todos all the world;
   </div>
 }
+
+export default Sobre

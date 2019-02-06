@@ -10,7 +10,13 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
 const optionsCommon = ({
     mode: 'production',
-    cssStyleLoader : MiniCssExtractPlugin.loader
+    cssStyleLoader : MiniCssExtractPlugin.loader,
+    fileLoader: {
+        loader: 'file-loader',
+        options: {
+            name: '[path][name]-[hash:8].[ext]'
+        }
+    }
 })
 
 export default Merge(Common(optionsCommon), {        

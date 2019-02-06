@@ -12,12 +12,10 @@ import PrivateRoute from './components/PrivateRoute'
 
 import { GlobalStyle, GlobalTheme } from './styles/global'
 
-//<GlobalStyle />
-
 const Routes = () => (
     <ThemeProvider theme={GlobalTheme}>
         <React.Fragment>
-            
+            <GlobalStyle />
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Home} />

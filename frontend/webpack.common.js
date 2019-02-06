@@ -23,11 +23,7 @@ export default (options) => {
                 },
                 {
                     test: /\.(pdf|jpg|png|gif|svg|ico)$/,
-                    use: [
-                        {
-                            loader: options.fileLoader
-                        },
-                    ]
+                    use: [options.fileLoader]
                 },
             ]
         },

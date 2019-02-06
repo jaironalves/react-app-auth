@@ -4,12 +4,22 @@ import Webpack from 'webpack'
 
 const optionsCommon = ({
     mode: 'development',
-    cssStyleLoader: 'style-loader',
-    fileLoader: 'url-loader'
+    cssStyleLoader: 'style-loader',    
+    fileLoader: {
+        loader: 'url-loader'
+    }
 })
 
 export default Merge(Common(optionsCommon), {
     devtool: 'inline-source-map',
+    module: {
+        rules:
+            [{
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader', 'eslint-loader'],
+            }]
+        },
     devServer: {
         host: '0.0.0.0',
         port: process.env.PORT || 3000,

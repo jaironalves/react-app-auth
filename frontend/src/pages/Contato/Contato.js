@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-export default Contato = () => {
-  <div>
-     Nosso Contato     
-  </div>
-}
+const Contato = () => {
+  <div>Nosso Contato</div>;
+};
+
+export default Contato;

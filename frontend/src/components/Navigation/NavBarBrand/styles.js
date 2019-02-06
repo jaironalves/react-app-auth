@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const Container = styled(Link)`    
-    border: 1px solid orange;
+const Container = styled(Link)`        
     display: flex;   
     align-items: center;         
     height: 100%;
