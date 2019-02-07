@@ -14,11 +14,10 @@ const Container = styled(Link)`
     img {
         height: 100%;   
     }
-    span {
-        display: inline-flex;
-        align-items: center;
-        height: 100%;        
-        margin-right: 10px;        
+    span {        
+        display: inline-flex;                
+        margin-right: px;        
+        color: black;
         @media (max-width: 400px) {
             display: none;            
         } 

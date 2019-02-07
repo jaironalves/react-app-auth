@@ -3,7 +3,7 @@ import Container from './styles'
 import PropTypes from 'prop-types'
 
 const NavBarBrand = ({ to, srcLogo, text }) => {
-    return (
+    return (        
         <React.Fragment>
             <Container to={to}>
                 {srcLogo && <img src={srcLogo} />}

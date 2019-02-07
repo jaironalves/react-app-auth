@@ -5,7 +5,9 @@ import { Menu } from 'styled-icons/material'
 const NavBarButton = () => (
     <React.Fragment>
         <Container>
-            <Menu />
+            <button>
+                <Menu />
+            </button>
         </Container>
     </React.Fragment>
 )

@@ -7,33 +7,25 @@ const NavBarContainer = styled.nav`
   align-items: center;
   height: 56px;
   background-color: ${props => props.theme.primary};
-  padding: 0 10px;  
-  @media (max-width: 725px) {
-    padding: 0;
+  padding: 0 5px;  
+  @media (max-width: 725px) {    
     justify-content: space-between;
   }
 `
 
-const NavBarHeaderLink = styled(Link)`
-  height: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
+const NavBarHeaderLink = styled(Link)`        
+  margin: 5px;  
   text-decoration: none;
   text-align: center;
   color: white;
-  font-weight: bold;
-  border: 2px solid yellow;
+  font-weight: bold;  
   &:hover {
     color: gray;
   }
 `
 
-const NavBarHeaderLinkContainer = styled.div`
-  border: 2px solid black;
-  display: flex;
-  height: 80%;
+const NavBarHeaderLinkContainer = styled.div`  
+  display: flex;  
   box-sizing: border-box;
   align-items: center;
   ${props =>
